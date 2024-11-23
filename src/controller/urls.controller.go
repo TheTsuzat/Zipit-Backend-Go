@@ -122,6 +122,7 @@ func Redirect(c *fiber.Ctx) error {
 		})
 	}
 	// If the url is not found, return 404
+	//! TODO: In this case, we can redirect to the frontend 404 page
 	if url == nil {
 		return c.Status(fiber.StatusNotFound).JSON(models.ApiError{
 			Status:  fiber.StatusNotFound,
